@@ -49,8 +49,9 @@ export class UpdateCarComponent implements OnInit {
   updateCar() {
     this.car.coordinations.push(this.coordination);
     this.carService.updateCar(this.car)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.router.navigate(['/cars']);
+      .subscribe(data => {
+        this.router.navigate(['/cars']);
+      }, error => console.log(error));
   }
 
   // tslint:disable-next-line:typedef

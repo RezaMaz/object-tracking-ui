@@ -25,7 +25,6 @@ export class CarCoordinationsComponent implements OnInit {
 
     this.carService.getCar(this.id)
       .subscribe(data => {
-        console.log(data);
         this.car = data;
       }, error => console.log(error));
   }

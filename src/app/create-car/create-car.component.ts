@@ -40,9 +40,10 @@ export class CreateCarComponent implements OnInit {
   save() {
     this.car.coordinations.push(this.coordination);
     this.carService.createCar(this.car)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.newCar();
-    this.router.navigate(['/cars']);
+      .subscribe(data => {
+        this.newCar();
+        this.router.navigate(['/cars']);
+      }, error => console.log(error));
   }
 
   // tslint:disable-next-line:typedef

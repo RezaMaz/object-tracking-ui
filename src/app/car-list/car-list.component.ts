@@ -32,7 +32,6 @@ export class CarListComponent implements OnInit {
     this.carService.deleteCar(id)
       .subscribe(
         data => {
-          console.log(data);
           this.reloadData();
         },
         error => console.log(error));
