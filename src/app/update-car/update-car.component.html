@@ -4,7 +4,7 @@
     <div class="form-group">
 
       <label for="type" class="required">Type</label>
-      <select class="form-control" id="type" name="type" [(ngModel)]="car.type">
+      <select class="form-control" id="type" name="type" [(ngModel)]="car.type" required>
         <option *ngFor="let key of keys" [value]="carTypes[key]" [label]="carTypes[key]"></option>
       </select>
 
