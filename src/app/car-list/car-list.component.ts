@@ -39,6 +39,11 @@ export class CarListComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
+  updateCar(id: number) {
+    this.router.navigate(['update', id]);
+  }
+
+  // tslint:disable-next-line:typedef
   carCoordinations(id: number) {
     this.router.navigate(['coordinations', id]);
   }
