@@ -17,6 +17,7 @@ export class CreateCarComponent implements OnInit {
               private router: Router) {
   }
 
+  // tslint:disable-next-line:typedef
   ngOnInit() {
   }
 
@@ -25,19 +26,18 @@ export class CreateCarComponent implements OnInit {
     this.car = new Car();
   }
 
+  // tslint:disable-next-line:typedef
   save() {
     this.carService.createCar(this.car)
       .subscribe(data => console.log(data), error => console.log(error));
-    this.car = new Car();
-    this.gotoList();
+    this.newCar();
+    this.router.navigate(['/cars']);
   }
 
+  // tslint:disable-next-line:typedef
   onSubmit() {
     this.submitted = true;
     this.save();
   }
 
-  gotoList() {
-    this.router.navigate(['/cars']);
-  }
 }
