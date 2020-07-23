@@ -17,14 +17,17 @@ export class CarListComponent implements OnInit {
               private router: Router) {
   }
 
+  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.reloadData();
   }
 
+  // tslint:disable-next-line:typedef
   reloadData() {
-    this.cars = this.carService.getCarsList();
+    this.cars = this.carService.getCarList();
   }
 
+  // tslint:disable-next-line:typedef
   deleteCar(id: number) {
     this.carService.deleteCar(id)
       .subscribe(
@@ -35,6 +38,7 @@ export class CarListComponent implements OnInit {
         error => console.log(error));
   }
 
+  // tslint:disable-next-line:typedef
   carCoordinations(id: number) {
     this.router.navigate(['coordinations', id]);
   }
