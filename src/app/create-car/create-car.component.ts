@@ -38,7 +38,6 @@ export class CreateCarComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   save() {
-    console.log(this.car.coordinations);
     this.car.coordinations.push(this.coordination);
     this.carService.createCar(this.car)
       .subscribe(data => console.log(data), error => console.log(error));

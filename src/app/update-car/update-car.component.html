@@ -1,11 +1,27 @@
 <h3>Update Car</h3>
 <div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()" ngNativeValidate>
     <div class="form-group">
-      <label for="type">Type</label>
-      <input [(ngModel)]="car.type" class="form-control" id="type" name="type" required type="text">
+
+      <label for="type" class="required">Type</label>
+      <select class="form-control" id="type" name="type" [(ngModel)]="car.type">
+        <option *ngFor="let key of keys" [value]="carTypes[key]" [label]="carTypes[key]"></option>
+      </select>
+
+      <label for="latitude" class="required">Latitude</label>
+      <input [(ngModel)]="coordination.latitude" class="form-control" id="latitude" name="latitude" required
+             type="text">
+
+      <label for="longitude" class="required">Longitude</label>
+      <input [(ngModel)]="coordination.longitude" class="form-control" id="longitude" name="longitude" required
+             type="text">
+
     </div>
 
     <button class="btn btn-success" type="submit">Submit</button>
   </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
 </div>
