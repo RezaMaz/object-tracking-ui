@@ -1,1 +1,25 @@
-<p>car-list works!</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Car List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Type</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let car of cars | async">
+        <td>{{car.type}}</td>
+        <td>
+          <button (click)="deleteCar(car.id)" class="btn btn-danger">Delete</button>
+          <button (click)="carCoordinations(car.id)" class="btn btn-info" style="margin-left: 10px">Coordinations
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
