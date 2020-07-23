@@ -6,12 +6,14 @@
     <table class="table table-striped">
       <thead>
       <tr>
+        <th>ID</th>
         <th>Type</th>
         <th>Actions</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let car of cars | async">
+        <td>{{car.id}}</td>
         <td>{{car.type}}</td>
         <td>
           <button (click)="deleteCar(car.id)" class="btn btn-danger">Delete</button>
