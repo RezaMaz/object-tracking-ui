@@ -1,5 +1,5 @@
 export enum CarType {
-  Passenger,
-  Personal,
-  Freight
+  Passenger = 1,
+  Personal = 2,
+  Freight = 3
 }
