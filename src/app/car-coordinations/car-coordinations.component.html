@@ -12,8 +12,8 @@
       <label><b>Coordinations: </b></label>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let coordination of car.coordinations">
-          <button type="button" class="btn btn-primary">{{coordination.latitude}}</button>
-          <button type="button" class="btn btn-danger">{{coordination.longitude}}</button>
+          <label><b>Latitude: </b></label>{{coordination.latitude}}
+          <label><b>Longitude: </b></label>{{coordination.longitude}}
         </li>
       </ul>
     </div>
