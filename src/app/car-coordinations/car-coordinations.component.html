@@ -6,8 +6,12 @@
 
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let coordination of car.coordinations">
-        <label><b>Latitude: </b></label>{{coordination.latitude}}
-        <label><b>Longitude: </b></label>{{coordination.longitude}}
+        <label><b>Latitude: </b></label>
+        <span class="mr-3">{{coordination.latitude}}</span>
+        <label><b>Longitude: </b></label>
+        <span class="mr-3">{{coordination.longitude}}</span>
+        <label><b>Update Time: </b></label>
+        <span class="mr-3">{{coordination.createdDate}}</span>
       </li>
     </ul>
 
