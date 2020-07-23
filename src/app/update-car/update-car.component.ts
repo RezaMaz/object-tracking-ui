@@ -12,6 +12,7 @@ export class UpdateCarComponent implements OnInit {
 
   id: number;
   car: Car;
+  submitted = false;
 
   constructor(private route: ActivatedRoute, private router: Router,
               private carService: CarService) {
