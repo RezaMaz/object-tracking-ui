@@ -11,3 +11,8 @@
   text-align: center;
   color: white;
 }
+
+form label.required:after {
+  color: red;
+  content: " *";
+}
