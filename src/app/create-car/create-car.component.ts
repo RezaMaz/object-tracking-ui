@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Car} from '../model/car';
+import {CarService} from '../car.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-car',
@@ -7,9 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateCarComponent implements OnInit {
 
-  constructor() { }
+  car: Car = new Car();
+  submitted = false;
 
-  ngOnInit(): void {
+  constructor(private carService: CarService,
+              private router: Router) {
   }
 
+  ngOnInit() {
+  }
+
+  newCar(): void {
+    this.submitted = false;
+    this.car = new Car();
+  }
+
+  save() {
+    this.carService.createCar(this.car)
+      .subscribe(data => console.log(data), error => console.log(error));
+    this.car = new Car();
+    this.gotoList();
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+  }
+
+  gotoList() {
+    this.router.navigate(['/cars']);
+  }
 }
