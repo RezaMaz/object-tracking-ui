@@ -5,7 +5,7 @@
   <div>
 
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let coordination of car.coordinations">
+      <li *ngFor="let coordination of car.coordinations" class="list-group-item">
         <label><b>Latitude: </b></label>
         <span class="mr-3">{{coordination.latitude}}</span>
         <label><b>Longitude: </b></label>

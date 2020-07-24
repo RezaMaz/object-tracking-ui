@@ -3,12 +3,12 @@
   <form (ngSubmit)="onSubmit()" ngNativeValidate>
     <div class="form-group">
 
-      <label for="type" class="required">Type</label>
-      <select class="form-control" id="type" name="type" [(ngModel)]="car.type" required>
-        <option *ngFor="let key of keys" [value]="carTypes[key]" [label]="carTypes[key]"></option>
+      <label class="required" for="type">Type</label>
+      <select [(ngModel)]="car.type" class="form-control" id="type" name="type" required>
+        <option *ngFor="let key of keys" [label]="carTypes[key]" [value]="carTypes[key]"></option>
       </select>
 
-      <label for="plateNumber" class="required">Plate Number</label>
+      <label class="required" for="plateNumber">Plate Number</label>
       <input [(ngModel)]="car.plateNumber" class="form-control" id="plateNumber" name="plateNumber" required
              type="text">
 

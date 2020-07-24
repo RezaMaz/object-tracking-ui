@@ -3,20 +3,20 @@
   <form (ngSubmit)="onSubmit()" ngNativeValidate>
     <div class="form-group">
 
-      <label for="type" class="required">Type</label>
-      <select class="form-control" id="type" name="type" [(ngModel)]="car.type" required>
-        <option *ngFor="let key of keys" [value]="carTypes[key]" [label]="carTypes[key]"></option>
+      <label class="required" for="type">Type</label>
+      <select [(ngModel)]="car.type" class="form-control" id="type" name="type" required>
+        <option *ngFor="let key of keys" [label]="carTypes[key]" [value]="carTypes[key]"></option>
       </select>
 
-      <label for="plateNumber" class="required">Plate Number</label>
+      <label class="required" for="plateNumber">Plate Number</label>
       <input [(ngModel)]="car.plateNumber" class="form-control" id="plateNumber" name="plateNumber" required
              type="text">
 
-      <label for="latitude" class="required">Latitude</label>
+      <label class="required" for="latitude">Latitude</label>
       <input [(ngModel)]="coordination.latitude" class="form-control" id="latitude" name="latitude" required
              type="text">
 
-      <label for="longitude" class="required">Longitude</label>
+      <label class="required" for="longitude">Longitude</label>
       <input [(ngModel)]="coordination.longitude" class="form-control" id="longitude" name="longitude" required
              type="text">
 
