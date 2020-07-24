@@ -8,6 +8,7 @@
       <tr>
         <th>ID</th>
         <th>Type</th>
+        <th>Plate Number</th>
         <th>Actions</th>
       </tr>
       </thead>
@@ -15,6 +16,7 @@
       <tr *ngFor="let car of cars | async">
         <td>{{car.id}}</td>
         <td>{{car.type}}</td>
+        <td>{{car.plateNumber}}</td>
         <td>
           <button (click)="deleteCar(car.id)" class="btn btn-danger">Delete</button>
           <button (click)="updateCar(car.id)" class="btn btn-primary m-1">Update</button>

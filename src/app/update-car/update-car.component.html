@@ -8,13 +8,17 @@
         <option *ngFor="let key of keys" [value]="carTypes[key]" [label]="carTypes[key]"></option>
       </select>
 
-      <div class="toast-header my-3">New Coordination:</div>
-      <label for="latitude" class="required">Latitude</label>
-      <input [(ngModel)]="coordination.latitude" class="form-control" id="latitude" name="latitude" required
+      <label for="plateNumber" class="required">Plate Number</label>
+      <input [(ngModel)]="car.plateNumber" class="form-control" id="plateNumber" name="plateNumber" required
              type="text">
 
-      <label for="longitude" class="required">Longitude</label>
-      <input [(ngModel)]="coordination.longitude" class="form-control" id="longitude" name="longitude" required
+      <div class="toast-header my-3">New Coordination:</div>
+      <label for="latitude">Latitude</label>
+      <input [(ngModel)]="coordination.latitude" class="form-control" id="latitude" name="latitude"
+             type="text">
+
+      <label for="longitude">Longitude</label>
+      <input [(ngModel)]="coordination.longitude" class="form-control" id="longitude" name="longitude"
              type="text">
 
     </div>
